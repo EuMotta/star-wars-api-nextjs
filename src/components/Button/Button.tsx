@@ -8,6 +8,7 @@ interface Button {
   href?: string;
   type?: 'button' | 'submit' | 'reset';
   styled?: boolean;
+  star?: boolean;
   className?: string;
   icon?: React.ReactNode;
   target?: string;
@@ -17,6 +18,7 @@ const Button = ({
   children,
   href,
   styled,
+  star,
   className,
   icon,
   ...rest
@@ -27,6 +29,9 @@ const Button = ({
   }
   if (className) {
     buttonClassName = ` ${buttonClassName} ${className} `;
+  }
+  if (star) {
+    buttonClassName += ` ${styles.btn_star} `;
   }
 
   const buttonProps = {

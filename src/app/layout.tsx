@@ -4,6 +4,8 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 
 import ScrollUp from '@/components/common/ScrollUp';
+import { NavbarDemo } from '@/components/Navbar/Navbar';
+import { Providers } from '@/providers/Providers';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -28,8 +30,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <ScrollUp />
-        {children}
+        <Providers>
+          <ScrollUp />
+          <NavbarDemo />
+          {children}
+        </Providers>
       </body>
     </html>
   );

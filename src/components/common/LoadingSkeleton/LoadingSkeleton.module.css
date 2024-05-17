@@ -1,9 +1,26 @@
 .skeleton_section {
-  @apply w-full h-screen items-center flex flex-col justify-center;
+  background-image: url(/loading/loading2.gif);
+  background-size: cover;
+  background-repeat: no-repeat;
+  @apply w-full h-screen items-end flex flex-col p-10 justify-end;
+}
+
+@media (min-width: 768px) {
+  .skeleton_section {
+    background-position: center;
+  }
+}
+
+@media (max-width: 767px) {
+  .skeleton_section {
+    background-position: right;
+  }
 }
 .skeleton_section .skeleton_content {
   @apply flex gap-5 justify-center items-center;
 }
 .skeleton_section .skeleton_content .skeleton_loading {
-  @apply flex flex-col gap-20  justify-center items-center;
+  @apply flex;
+
+  filter: drop-shadow(4px 4px 2px rgba(0, 0, 0, 0.527));
 }

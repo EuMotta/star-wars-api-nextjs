@@ -1,3 +1,9 @@
 .icon {
   @apply flex items-center gap-2;
 }
+.button {
+  @apply px-5 py-2;
+}
+.btn_star {
+  @apply hover:text-yellow-100 rounded-full border border-yellow-300 bg-yellow-300/20 hover:bg-yellow-300/40 duration-500;
+}

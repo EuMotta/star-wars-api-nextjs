@@ -1,11 +1,86 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 240, 248, 255;
-  --background-end-rgb: 245, 248, 255;
+.dark {
+  --tw-bg-opacity: 1;
+  --tw-color-primary: 172 134 108;
+  --tw-color-primary-100: 160 125 101;
+  --tw-color-primary-200: 150 117 95;
+  --tw-color-primary-300: 136 106 86;
+
+  --color-primary: rgb(var(--tw-color-primary));
+  --color-primary-100: rgb(var(--tw-color-primary-100));
+  --color-primary-200: rgb(var(--tw-color-primary-200));
+  --color-primary-300: rgb(var(--tw-color-primary-300));
+
+  /* secondary start */
+  --tw-color-secondary: 155 67 192;
+  --tw-color-secondary-100: 108 52 131;
+  --tw-color-secondary-200: 91 44 111;
+  --tw-color-secondary-300: 74 35 90;
+
+  --color-secondary: rgb(var(--tw-color-secondary));
+  --color-secondary-100: rgb(var(--tw-color-secondary-100));
+  --color-secondary-200: rgb(var(--tw-color-secondary-200));
+  --color-secondary-300: rgb(var(--tw-color-secondary-300));
+  /* secondary end */
+
+  /* base start */
+  --tw-color-base: 24 74 108;
+  --tw-color-base-100: 17 53 77;
+  --tw-color-base-200: 11 35 50;
+  --tw-color-base-300: 6 18 26;
+
+  --color-base: rgb(var(--tw-color-base));
+  --color-base-100: rgb(var(--tw-color-base-100));
+  --color-base-200: rgb(var(--tw-color-base-200));
+  --color-base-300: rgb(var(--tw-color-base-300));
+  /* base end */
+
+  background-color: rgba(10, 11, 28, var(--tw-bg-opacity));
+}
+.test {
+  --tw-color-primary-50: rgb(8, 6, 43);
+}
+.light {
+  --tw-bg-opacity: 1;
+  --tw-color-primary: 233 190 161;
+  --tw-color-primary-100: 202 163 137;
+  --tw-color-primary-200: 194 157 132;
+  --tw-color-primary-300: 184 149 126;
+
+  --color-primary: rgb(var(--tw-color-primary));
+  --color-primary-100: rgb(var(--tw-color-primary-100));
+  --color-primary-200: rgb(var(--tw-color-primary-200));
+  --color-primary-300: rgb(var(--tw-color-primary-300));
+
+  /* secondary start */
+  --tw-color-secondary: 155 67 192;
+  --tw-color-secondary-100: 232 218 239;
+  --tw-color-secondary-200: 210 180 222;
+  --tw-color-secondary-300: 187 143 206;
+
+  --color-secondary: rgb(var(--tw-color-secondary));
+  --color-secondary-100: rgb(var(--tw-color-secondary-100));
+  --color-secondary-200: rgb(var(--tw-color-secondary-200));
+  --color-secondary-300: rgb(var(--tw-color-secondary-300));
+  /* secondary end */
+
+  /* base start */
+  --tw-color-base: 230 242 251;
+  --tw-color-base-100: 209 228 242;
+  --tw-color-base-200: 179 206 226;
+  --tw-color-base-300: 154 183 204;
+
+  --color-base: rgb(var(--tw-color-base));
+  --color-base-100: rgb(var(--tw-color-base-100));
+  --color-base-200: rgb(var(--tw-color-base-200));
+  --color-base-300: rgb(var(--tw-color-base-300));
+  /* base end */
+
+  background-color: rgba(234, 242, 248, var(--tw-bg-opacity));
 }
 
 * {
@@ -16,7 +91,16 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+@font-face {
+  font-family: 'StarJedi';
+  src: url('../../assets/fonts/Starjedi.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+.font-jedi {
+  font-family: 'StarJedi', sans-serif;
+  letter-spacing: 3px;
+}
 html,
 body {
   height: 100%;
@@ -50,8 +134,12 @@ h4,
 h5,
 h6 {
   overflow-wrap: break-word;
+  font-family: 'Poppins', sans-serif;
 }
 
+.text_emphasis {
+  @apply xl:text-7xl lg:text-6xl md:text-5xl sm:text-4xl text-3xl;
+}
 /* destaque da fonte */
 h1 {
   font-weight: 700;

@@ -1,3 +1,5 @@
+import { AiOutlineLoading } from 'react-icons/ai';
+
 import styles from './LoadingSkeleton.module.css';
 export default function LoadingSkeleton() {
   return (
@@ -5,7 +7,9 @@ export default function LoadingSkeleton() {
       <div className={styles.skeleton_content}>
         <div>
           <div className={styles.skeleton_loading}>
-            <h1 className="text_gradient text-center">Carregando</h1>
+            <h3 className="flex items-center gap-5">
+              Carregando <AiOutlineLoading className="animate-spin" />
+            </h3>
           </div>
         </div>
       </div>
