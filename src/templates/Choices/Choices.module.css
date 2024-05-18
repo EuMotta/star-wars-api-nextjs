@@ -1,0 +1,9 @@
+.choices {
+    @apply  min-h-screen;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url(/bg/choices.jpg);
+  background-size: cover;
+}
+.choices_content {
+    @apply flex flex-wrap gap-x-10 justify-evenly;
+}

@@ -16,7 +16,7 @@ const Hero = () => {
       <Section>
         <Container>
           <div className="h-screen text-white">
-            <div className="h-full w-4/5 mx-auto">
+            <div className="h-3/4 w-4/5 flex items-center mx-auto">
               <motion.div
                 initial="hidden"
                 whileInView="show"

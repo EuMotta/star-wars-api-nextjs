@@ -265,3 +265,12 @@ h5 {
     font-size: 0.75em;
   } /* 12px */
 }
+
+
+
+.drop_shadow_black {
+  filter: drop-shadow(5px 5px 4px rgba(0, 0, 0, 0.658));
+}
+.drop_shadow_white {
+  filter: drop-shadow(5px 5px 4px rgba(255, 255, 255, 0.63));
+}

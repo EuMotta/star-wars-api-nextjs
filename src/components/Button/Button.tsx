@@ -10,6 +10,7 @@ interface Button {
   styled?: boolean;
   star?: boolean;
   className?: string;
+  disabled?: boolean;
   icon?: React.ReactNode;
   target?: string;
   onClick?: () => void;

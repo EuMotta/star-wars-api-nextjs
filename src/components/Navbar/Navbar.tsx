@@ -3,12 +3,7 @@ import React, { useState } from 'react';
 
 import { cn } from '@/utils/cn';
 
-import {
-  HoveredLink,
-  Menu,
-  MenuItem,
-  ProductItem,
-} from '../ui/Navbar/navbar-menu';
+import { HoveredLink, Menu, MenuItem } from '../ui/Navbar/navbar-menu';
 import Theme from '../ui/Theme/Theme';
 
 export function NavbarDemo() {
@@ -28,28 +23,14 @@ function Navbar({ className }: { className?: string }) {
       <Menu setActive={setActive}>
         <Theme />
         <div className="flex gap-5">
-          <MenuItem setActive={setActive} active={active} item="Motta">
+          <MenuItem setActive={setActive} active={active} item="Home">
             <div className="flex flex-col space-y-4 text-sm">
-              <HoveredLink href="/web-dev">Desenvolvimento Web</HoveredLink>
-              <HoveredLink href="/interface-design">
-                Design de Interface
-              </HoveredLink>
-              <HoveredLink href="/seo">Informações</HoveredLink>
+              <HoveredLink href="/">Home</HoveredLink>
             </div>
           </MenuItem>
-          <MenuItem setActive={setActive} active={active} item="Projetos">
-            <div className="  text-sm grid grid-cols-2 gap-10 p-4">
-              <ProductItem
-                title="ThreadWorld"
-                href="https://threads-next-js.vercel.app/"
-                src="/bg/hero.jpg"
-                description="Demonstrar o funcionamento de um thread."
-              />
-            </div>
-          </MenuItem>
-          <MenuItem setActive={setActive} active={active} item="Skills">
+          <MenuItem setActive={setActive} active={active} item="Procurar">
             <div className="flex flex-col space-y-4 text-sm">
-              <HoveredLink href="/soft-skills">Soft Skills</HoveredLink>
+              <HoveredLink href="/choices">Procurar</HoveredLink>
             </div>
           </MenuItem>
         </div>
