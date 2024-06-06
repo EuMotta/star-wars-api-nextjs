@@ -6,8 +6,8 @@ import Loading from '@/components/ui/Loading/loading';
 import NoData from '@/components/ui/NoData/no-data';
 import { useData } from '@/Hooks';
 import { DataProvider } from '@/providers/DataProvider';
-import PeoplesList from '@/templates/peoples/Peoples';
 import styles from '@/templates/peoples/Peoples.module.css';
+import PlanetsList from '@/templates/Planets/Planets';
 type PageProps = {
   params: {
     page: number;
@@ -38,13 +38,13 @@ const Page = ({ params }: PageProps) => {
   return (
     <div className={styles.peoples}>
       <DataProvider data={data} loading={loading}>
-        {/*         <PeoplesList />
+        <PlanetsList />
         <Paginator
-          type="people"
+          type="planets"
           totalCount={data.results.length}
           pageSize={12}
           currentPage={params.page}
-        /> */}
+        />
       </DataProvider>
     </div>
   );

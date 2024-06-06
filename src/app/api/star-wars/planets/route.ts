@@ -13,7 +13,7 @@ export async function GET(request: NextRequest) {
 
     data.results = data.results.map((planet: any, index: number) => ({
       ...planet,
-      image: `/star-wars/people/${startIndex + index + 1}.jpg`,
+      image: `/star-wars/planets/${startIndex + index + 1}.jpg`,
     }));
 
     return NextResponse.json(data, { status: 200 });

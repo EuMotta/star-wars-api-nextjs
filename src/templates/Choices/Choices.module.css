@@ -1,9 +1,9 @@
 .choices {
-    @apply  min-h-screen flex justify-center items-center;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+  @apply min-h-screen flex justify-center items-center;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
     url(/bg/choices.jpg);
   background-size: cover;
 }
 .choices_content {
-    @apply flex flex-wrap gap-10 justify-evenly h-full;
+  @apply flex flex-wrap gap-10 justify-evenly h-full;
 }

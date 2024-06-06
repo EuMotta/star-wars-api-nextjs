@@ -9,7 +9,7 @@ import {
   CardInfo,
 } from '@/components/ui/Card/3d-card';
 
-const PeoplesCard = ({
+const PlanetsCard = ({
   data,
   img,
   href,
@@ -35,4 +35,4 @@ const PeoplesCard = ({
   );
 };
 
-export default PeoplesCard;
+export default PlanetsCard;

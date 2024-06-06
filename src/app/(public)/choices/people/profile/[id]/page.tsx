@@ -2,12 +2,14 @@
 import Image from 'next/image';
 import React from 'react';
 
+import Button from '@/components/Button';
 import Loading from '@/components/ui/Loading/loading';
 import NoData from '@/components/ui/NoData/no-data';
 import { useData } from '@/Hooks';
 import { DataProvider } from '@/providers/DataProvider';
-import Button from '@/components/Button';
+
 import { extractId } from '@/utils';
+
 import { Film, Starship, Vehicle } from '../../../../../../../@Types/global';
 
 type PageProps = {

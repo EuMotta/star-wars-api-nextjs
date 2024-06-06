@@ -92,7 +92,7 @@ export function useData({ url, reverse, page, single, type }: Hook) {
         dispatch({ type: 'FETCH_FAIL', payload: 'um erro ocorreu' });
       }
     }
-  }, [url, reverse, page, single]);
+  }, [url, reverse, page, single, type]);
 
   useEffect(() => {
     fetchData();
