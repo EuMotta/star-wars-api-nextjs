@@ -49,7 +49,7 @@ export default function RootLayout({
         <Providers>
           <ScrollUp />
           <NavbarDemo />
-          {children}
+          <div className="mt-5">{children}</div>
         </Providers>
       </body>
     </html>

@@ -7,7 +7,7 @@ import NoData from '@/components/ui/NoData/no-data';
 import { useData } from '@/Hooks';
 import { DataProvider } from '@/providers/DataProvider';
 import styles from '@/templates/peoples/Peoples.module.css';
-import PlanetsList from '@/templates/Planets/Planets';
+import StarshipsList from '@/templates/Starships/Starships';
 type PageProps = {
   params: {
     page: number;
@@ -17,9 +17,10 @@ const Page = ({ params }: PageProps) => {
   const { loading, data } = useData({
     url: '/api/star-wars',
     reverse: true,
-    type: 'planets',
+    type: 'starships',
     page: params.page,
   });
+  console.log(data);
   if (loading) {
     return (
       <div className="flex h-[100vh] justify-center items-center">
@@ -27,7 +28,6 @@ const Page = ({ params }: PageProps) => {
       </div>
     );
   }
-  console.log(data);
   if (!data.results) {
     return (
       <div className="flex h-[100vh]  justify-center items-center">
@@ -38,10 +38,10 @@ const Page = ({ params }: PageProps) => {
   return (
     <div className={styles.peoples}>
       <DataProvider data={data} loading={loading}>
-        <PlanetsList />
+        <StarshipsList />
         <Paginator
-          maxPages={6}
-          type="planets"
+          type="starships"
+          maxPages={4}
           totalCount={data.results.length}
           pageSize={12}
           currentPage={params.page}

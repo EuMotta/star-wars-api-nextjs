@@ -34,13 +34,14 @@ const Page = ({ params }: PageProps) => {
     );
   }
 
-  if (!data) {
+  if (!data || data.length < 1) {
     return (
       <div className="flex h-screen justify-center items-center">
         <NoData img="/error/NoData.gif" text="Sem informações nesta página" />
       </div>
     );
   }
+  const homeworld = extractId(data.homeworld.url);
 
   return (
     <div className="flex flex-col items-center justify-center bg-gray-900 text-white min-h-screen p-6">
@@ -85,7 +86,13 @@ const Page = ({ params }: PageProps) => {
                 </p>
                 <p>
                   <span className="font-semibold">Planeta natal:</span>{' '}
-                  {data.homeworld.name}
+                  <Button
+                    href={`/choices/planets/profile/${homeworld}`}
+                    className="hover:text-primary"
+                    unstyled
+                  >
+                    {data?.homeworld?.name}
+                  </Button>
                 </p>
               </div>
               <div className="space-y-4">

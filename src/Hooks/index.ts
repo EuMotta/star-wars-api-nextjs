@@ -53,8 +53,7 @@ export function useData({ url, reverse, page, single, type }: Hook) {
     try {
       let result;
       if (type && single) {
-        const query = `single=${single}`;
-        result = await fetch(`${url}/${type}?${query}`);
+        result = await fetch(`${url}/${type}/${single}`);
       } else if (type && page) {
         const query = `page=${page}`;
         result = await fetch(`${url}/${type}?${query}`);

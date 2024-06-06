@@ -3,7 +3,14 @@ import React, { useState } from 'react';
 
 import { cn } from '@/utils/cn';
 
-import { HoveredLink, Menu, MenuItem } from '../ui/Navbar/navbar-menu';
+import Breadcrumb from '../breadcrumb/breadcrumb';
+import {
+  HoveredLink,
+  HoveredSubLink,
+  Menu,
+  MenuItem,
+  SubLink,
+} from '../ui/Navbar/navbar-menu';
 import Theme from '../ui/Theme/Theme';
 
 export function NavbarDemo() {
@@ -31,11 +38,20 @@ function Navbar({ className }: { className?: string }) {
           <MenuItem setActive={setActive} active={active} item="Procurar">
             <div className="flex flex-col space-y-4 text-sm">
               <HoveredLink href="/choices">Procurar</HoveredLink>
+              <SubLink>
+                <HoveredSubLink href="/choices/people/1">
+                  Personagens
+                </HoveredSubLink>
+                <HoveredSubLink href="/choices/planets/1">
+                  Planetas
+                </HoveredSubLink>
+              </SubLink>
             </div>
           </MenuItem>
         </div>
         <div />
       </Menu>
+      <Breadcrumb />
     </div>
   );
 }

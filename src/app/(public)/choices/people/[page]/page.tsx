@@ -41,6 +41,7 @@ const Page = ({ params }: PageProps) => {
         <PeoplesList />
         <Paginator
           type="people"
+          maxPages={9}
           totalCount={data.results.length}
           pageSize={12}
           currentPage={params.page}

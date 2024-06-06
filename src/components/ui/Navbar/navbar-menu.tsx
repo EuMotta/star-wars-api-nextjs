@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
+import Button from '@/components/Button';
 import { motion } from 'framer-motion';
 
 const transition = {
@@ -104,5 +105,25 @@ export const ProductItem = ({
 };
 
 export const HoveredLink = ({ children, ...rest }: any) => {
-  return <Link {...rest}>{children}</Link>;
+  return (
+    <Button unstyled className="font-bold" {...rest}>
+      {children}
+    </Button>
+  );
+};
+export const SubLink = ({ children, ...rest }: any) => {
+  return (
+    <ul {...rest} className="list-disc space-y-1 pl-5">
+      {children}
+    </ul>
+  );
+};
+export const HoveredSubLink = ({ children, ...rest }: any) => {
+  return (
+    <li className="list-item">
+      <Button unstyled {...rest}>
+        {children}
+      </Button>
+    </li>
+  );
 };

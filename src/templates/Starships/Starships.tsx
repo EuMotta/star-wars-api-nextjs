@@ -6,9 +6,9 @@ import { motion } from 'framer-motion';
 
 import { fadeIn } from '@/utils/motion';
 
-import PlanetsCard from './PlanetsCard';
+import StarshipsCard from './StarshipsCard';
 
-const PlanetsList = () => {
+const StarshipsList = () => {
   const { data } = useData();
   return (
     <Section>
@@ -24,7 +24,7 @@ const PlanetsList = () => {
               variants={fadeIn('down', 'tween', index / 7, 1)}
             >
               <div>
-                <PlanetsCard
+                <StarshipsCard
                   img={planets.image}
                   data={planets}
                   href={`/choices/planets/profile/${planets.id}`}
@@ -38,4 +38,4 @@ const PlanetsList = () => {
   );
 };
 
-export default PlanetsList;
+export default StarshipsList;

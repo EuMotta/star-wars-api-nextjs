@@ -6,14 +6,14 @@ export async function GET(request: NextRequest) {
   const page = searchParams.get('page');
   try {
     if (page) {
-      const res = await fetch(`https://swapi.dev/api/planets/?page=${page}`);
+      const res = await fetch(`https://swapi.dev/api/starships/?page=${page}`);
       const data = await res.json();
 
       const startIndex = (Number(page) - 1) * 10 + 1;
 
       data.results = data.results.map((planet: any, index: number) => ({
         ...planet,
-        image: `/star-wars/planets/${startIndex + index + 1}.jpg`,
+        image: `/star-wars/starships/${startIndex + index}.jpg`,
         id: startIndex + index,
       }));
 
