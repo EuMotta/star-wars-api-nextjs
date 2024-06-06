@@ -1,22 +1,18 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { NextRequest, NextResponse } from 'next/server';
 
-export async function GET(
-  request: NextRequest,
-  { params }: { params: { type: string } },
-) {
+export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url);
-  const type = params.type;
   const page = searchParams.get('page');
 
   try {
-    const res = await fetch(`https://swapi.dev/api/${type}/?page=${page}`);
+    const res = await fetch(`https://swapi.dev/api/planets/?page=${page}`);
     const data = await res.json();
 
     const startIndex = (Number(page) - 1) * 10 + 1;
 
-    data.results = data.results.map((personagem: any, index: number) => ({
-      ...personagem,
+    data.results = data.results.map((planet: any, index: number) => ({
+      ...planet,
       image: `/star-wars/people/${startIndex + index + 1}.jpg`,
     }));
 

@@ -20,7 +20,7 @@ const ChoiceCard = ({
     <CardContainer className="inter-var">
       <CardBody
         background={img}
-        className="bg-gray-50 relative h-96 w-72 group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] rounded-xl p-6 border flex justify-center items-center"
+        className="bg-gray-50 relative h-80 w-60 group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] rounded-xl p-6 border flex justify-center items-center"
       >
         <Button
           href={href}

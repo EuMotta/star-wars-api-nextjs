@@ -8,6 +8,7 @@ interface Button {
   href?: string;
   type?: 'button' | 'submit' | 'reset';
   styled?: boolean;
+  unstyled?: boolean;
   star?: boolean;
   className?: string;
   disabled?: boolean;
@@ -20,19 +21,23 @@ const Button = ({
   href,
   styled,
   star,
+  unstyled,
   className,
   icon,
   ...rest
 }: Button) => {
   let buttonClassName = styles.button;
   if (icon) {
-    buttonClassName += ` ${styles.icon}`;
+    buttonClassName = ` ${styles.icon}`;
   }
   if (className) {
     buttonClassName = ` ${buttonClassName} ${className} `;
   }
   if (star) {
     buttonClassName += ` ${styles.btn_star} `;
+  }
+  if (unstyled) {
+    buttonClassName = ` ${className}`;
   }
 
   const buttonProps = {
@@ -42,7 +47,7 @@ const Button = ({
   if (styled) {
     return (
       <Button
-        className="items-baseline font-medium leading-tight  group/link text-base"
+        className="items-baseline font-medium leading-tight  group/link"
         href={href}
         target="_blank"
       >

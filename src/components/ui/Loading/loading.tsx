@@ -8,7 +8,7 @@ type Props = {
 };
 const Loading = ({ text, img }: Props) => {
   return (
-    <div>
+    <div className="text-center">
       <Image src={img} width={200} height={200} alt={text} />
       {text}
     </div>

@@ -14,7 +14,7 @@ export type Hook = {
   url: string;
   reverse: boolean;
   page?: number;
-  single?: string;
+  single?: number;
   type?: string;
 };
 type Action =

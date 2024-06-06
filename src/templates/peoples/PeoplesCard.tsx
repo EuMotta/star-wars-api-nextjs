@@ -1,43 +1,36 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React from 'react';
 
 import Button from '@/components/Button';
 import {
   CardBody,
   CardContainer,
-  CardItem,
+  CardInfo,
 } from '@/components/ui/Card/3d-card';
+import { FaLink } from 'react-icons/fa';
 
 const PeoplesCard = ({
-  title,
+  data,
   img,
   href,
 }: {
-  title: string;
+  data: any;
   img: string;
   href: string;
 }) => {
+  console.log(data);
   return (
-    <CardContainer className="inter-var">
+    <CardContainer>
       <CardBody
         background={img}
-        className="bg-gray-50 relative h-96 w-72 group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] rounded-xl p-6 border flex justify-center items-center"
-      >
-        <Button
-          href={href}
-          className="h-full w-full flex justify-center items-center"
-        >
-          <CardItem
-            as="p"
-            translateZ="60"
-            style={{
-              filter: 'drop-shadow(5px 5px 4px black)',
-            }}
-            className="font-jedi text-white lowercase"
-          >
-            {title}
-          </CardItem>
+        className=" duration-500 relative h-72 w-64 group/card dark:hover:shadow-2xl   border-black/[0.1] rounded-t-xl p-6 border flex justify-center items-center"
+      />
+      <CardInfo className="space-y-5">
+        <h5>{data.name}</h5>
+        <Button href={href} icon={<FaLink />} className="text-secondary">
+          Veja mais
         </Button>
-      </CardBody>
+      </CardInfo>
     </CardContainer>
   );
 };

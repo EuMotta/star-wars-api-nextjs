@@ -17,10 +17,9 @@ const Page = ({ params }: PageProps) => {
   const { loading, data } = useData({
     url: '/api/star-wars',
     reverse: true,
-    type: 'people',
+    type: 'planets',
     page: params.page,
   });
-  console.log(data);
   if (loading) {
     return (
       <div className="flex h-[100vh] justify-center items-center">
@@ -28,6 +27,7 @@ const Page = ({ params }: PageProps) => {
       </div>
     );
   }
+  console.log(data);
   if (!data.results) {
     return (
       <div className="flex h-[100vh]  justify-center items-center">
@@ -38,13 +38,13 @@ const Page = ({ params }: PageProps) => {
   return (
     <div className={styles.peoples}>
       <DataProvider data={data} loading={loading}>
-        <PeoplesList />
+        {/*         <PeoplesList />
         <Paginator
           type="people"
           totalCount={data.results.length}
           pageSize={12}
           currentPage={params.page}
-        />
+        /> */}
       </DataProvider>
     </div>
   );

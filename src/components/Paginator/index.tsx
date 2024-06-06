@@ -1,8 +1,6 @@
 import { useRouter } from 'next/navigation';
-import React from 'react';
+import Section from '../Section';
 
-import Button from '../Button';
-import styles from './Paginator.module.css';
 type Props = {
   totalCount?: number;
   pageSize: number;
@@ -14,27 +12,47 @@ const Paginator = (props: Props) => {
   let { currentPage } = props;
   const { totalCount } = props;
   const router = useRouter();
+
   const handleNext = () => {
     currentPage++;
     router.push(`/choices/${props.type}/${currentPage}`);
   };
+
   const handleBack = () => {
     currentPage--;
     router.push(`/choices/${props.type}/${currentPage}`);
   };
+
   if (!totalCount) {
-    return <div>Total indefinido</div>;
+    return <div className="text-gray-500">Total indefinido</div>;
   }
+
   return (
-    <div className={styles.paginator_content}>
-      <Button onClick={handleBack} disabled={currentPage < 1}>
+    <Section className="flex items-center justify-center space-x-4 p-4shadow-md rounded-md">
+      <button
+        onClick={handleBack}
+        disabled={currentPage < 1}
+        className={`px-4 py-2 text-white rounded ${
+          currentPage < 1
+            ? 'bg-gray-300 cursor-not-allowed'
+            : 'bg-blue-500 hover:bg-blue-600'
+        }`}
+      >
         Anterior
-      </Button>
-      <span>{currentPage}</span>
-      <Button onClick={handleNext} disabled={totalCount < 10}>
+      </button>
+      <span className="text-lg font-semibold">{currentPage}</span>
+      <button
+        onClick={handleNext}
+        disabled={totalCount < 10}
+        className={`px-4 py-2 text-white rounded ${
+          totalCount < 10
+            ? 'bg-gray-300 cursor-not-allowed'
+            : 'bg-blue-500 hover:bg-blue-600'
+        }`}
+      >
         Próximo
-      </Button>
-    </div>
+      </button>
+    </Section>
   );
 };
 
