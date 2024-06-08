@@ -62,7 +62,6 @@ export function useData({ url, reverse, page, single, type }: Hook) {
       }
 
       let data = await result.json();
-
       if (data == null) {
         data = [];
       }
@@ -77,7 +76,6 @@ export function useData({ url, reverse, page, single, type }: Hook) {
       if (single && data.length <= 1) {
         data = data[0];
       }
-
       if (reverse && data.length > 1) {
         const reverseData = data.reverse();
         dispatch({ type: 'FETCH_SUCCESS', payload: reverseData });

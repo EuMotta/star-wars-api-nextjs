@@ -7,14 +7,14 @@ export async function GET(request: NextRequest) {
   const page = searchParams.get('page');
   try {
     if (page) {
-      const res = await fetch(`https://swapi.dev/api/starships/?page=${page}`);
+      const res = await fetch(`https://swapi.dev/api/species/?page=${page}`);
       const data = await res.json();
 
       data.results = data.results.map((planet: any) => {
         const id = extractId(planet.url);
         return {
           ...planet,
-          image: `/star-wars/starships/${id}.jpg`,
+          image: `/star-wars/species/${id}.jpg`,
           id: id,
         };
       });
