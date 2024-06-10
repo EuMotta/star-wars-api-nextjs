@@ -4,12 +4,12 @@ import Section from '@/components/Section';
 import { useData } from '@/providers/DataProvider';
 import { motion } from 'framer-motion';
 
+import { extractId } from '@/utils';
 import { fadeIn } from '@/utils/motion';
 
-import PeoplesCard from './PeoplesCard';
-import { extractId } from '@/utils';
+import SpeciesCard from './SpeciesCard';
 
-const PeoplesList = () => {
+const SpeciesList = () => {
   const { data } = useData();
   return (
     <Section>
@@ -19,18 +19,19 @@ const PeoplesList = () => {
         viewport={{ once: true, amount: 0.25 }}
       >
         <Container className="flex flex-wrap gap-20 justify-evenly">
-          {data.results.map((people: any, index: number) => {
-            const peopleId = extractId(people.url);
+          {data.results.map((specie: any, index: number) => {
+            const specieId = extractId(specie.url);
             return (
               <motion.div
-                key={people.name}
+                key={specie.name}
                 variants={fadeIn('down', 'tween', index / 7, 1)}
               >
                 <div>
-                  <PeoplesCard
-                    img={people.image}
-                    data={people}
-                    href={`/choices/people/profile/${peopleId}`}
+                  {specieId}
+                  <SpeciesCard
+                    img={specie.image}
+                    data={specie}
+                    href={`/choices/species/profile/${specieId}`}
                   />
                 </div>
               </motion.div>
@@ -42,4 +43,4 @@ const PeoplesList = () => {
   );
 };
 
-export default PeoplesList;
+export default SpeciesList;

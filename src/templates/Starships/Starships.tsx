@@ -4,10 +4,10 @@ import Section from '@/components/Section';
 import { useData } from '@/providers/DataProvider';
 import { motion } from 'framer-motion';
 
+import { extractId } from '@/utils';
 import { fadeIn } from '@/utils/motion';
 
 import StarshipsCard from './StarshipsCard';
-import { extractId } from '@/utils';
 
 const StarshipsList = () => {
   const { data } = useData();

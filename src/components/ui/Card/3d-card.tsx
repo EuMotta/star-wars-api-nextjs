@@ -80,10 +80,12 @@ export const CardContainer = ({
 export const CardBody = ({
   children,
   className,
+  bgContain,
   background,
 }: {
   children?: React.ReactNode;
   className?: string;
+  bgContain?: boolean;
   background?: string;
 }) => {
   return (
@@ -94,8 +96,9 @@ export const CardBody = ({
       )}
       style={{
         backgroundImage: `url(${background})`,
-        backgroundSize: 'cover',
+        backgroundSize: `${bgContain ? 'contain' : 'cover'}`,
         backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
       }}
     >
       {children}
