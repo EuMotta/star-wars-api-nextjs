@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import Image from 'next/image';
 import React from 'react';
 import { FaLink } from 'react-icons/fa';
 
@@ -8,7 +9,6 @@ import {
   CardContainer,
   CardInfo,
 } from '@/components/ui/Card/3d-card';
-import Image from 'next/image';
 
 const SpeciesCard = ({
   data,
