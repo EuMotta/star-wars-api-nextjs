@@ -32,7 +32,7 @@ export async function GET(
     const starshipsData = await Promise.all(starshipPromises);
     data.starships = starshipsData;
 
-    data.image = `/star-wars/people/${Number(id)}.jpg`;
+    data.image = `/star-wars/people/${id}.jpg`;
 
     return NextResponse.json(data, { status: 200 });
   } catch (error) {

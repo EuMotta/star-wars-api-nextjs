@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import { extractId } from '@/utils';
 import { NextRequest, NextResponse } from 'next/server';
 
 export async function GET(request: NextRequest) {
@@ -12,13 +13,14 @@ export async function GET(request: NextRequest) {
       const res = await fetch(`https://swapi.dev/api/people/?page=${page}`);
       const data = await res.json();
 
-      const startIndex = (Number(page) - 1) * 10 + 1;
-
-      data.results = data.results.map((people: any, index: number) => ({
-        ...people,
-        image: `/star-wars/people/${startIndex + index + 1}.jpg`,
-        id: startIndex + index,
-      }));
+      data.results = data.results.map((people: any) => {
+        const id = extractId(people.url);
+        return {
+          ...people,
+          image: `/star-wars/people/${id}.jpg`,
+          id: id,
+        };
+      });
       return NextResponse.json(data, { status: 200 });
     }
 
@@ -48,7 +50,7 @@ export async function GET(request: NextRequest) {
       const starshipsData = await Promise.all(starshipPromises);
       data.starships = starshipsData;
 
-      data.image = `/star-wars/people/${Number(single) + 1}.jpg`;
+      data.image = `/star-wars/people/${single}.jpg`;
 
       return NextResponse.json(data, { status: 200 });
     }

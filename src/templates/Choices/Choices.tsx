@@ -7,6 +7,7 @@ import { fadeIn } from '@/utils/motion';
 
 import ChoiceCard from './ChoiceCard';
 import styles from './Choices.module.css';
+import Search from '@/components/Search/Search';
 
 const choicesData = [
   {
@@ -50,6 +51,9 @@ const Choices = () => {
           whileInView="show"
           viewport={{ once: true, amount: 0.25 }}
         >
+          <div className="mt-5">
+            <Search />
+          </div>
           <Container className={styles.choices_content}>
             {choicesData.map((choice, index) => (
               <motion.div

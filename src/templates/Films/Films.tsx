@@ -8,9 +8,9 @@ import { motion } from 'framer-motion';
 import { extractId } from '@/utils';
 import { fadeIn } from '@/utils/motion';
 
-import PeoplesCard from './PeoplesCard';
+import FilmsCard from './FilmsCard';
 
-const PeoplesList = () => {
+const FilmsList = () => {
   const { data } = useData();
   return (
     <Section>
@@ -23,19 +23,19 @@ const PeoplesList = () => {
           <Search />
         </div>
         <Container className="flex flex-wrap gap-20 justify-evenly">
-          {data.results.map((people: any, index: number) => {
-            const peopleId = extractId(people.url);
+          {data.results.map((film: any, index: number) => {
+            const filmId = extractId(film.url);
             return (
               <motion.div
-                key={people.name}
+                key={film.name}
                 variants={fadeIn('down', 'tween', index / 7, 1)}
               >
+                {filmId}
                 <div>
-                  {peopleId}
-                  <PeoplesCard
-                    img={people.image}
-                    data={people}
-                    href={`/choices/people/profile/${peopleId}`}
+                  <FilmsCard
+                    img={film.image}
+                    data={film}
+                    href={`/choices/films/profile/${filmId}`}
                   />
                 </div>
               </motion.div>
@@ -47,4 +47,4 @@ const PeoplesList = () => {
   );
 };
 
-export default PeoplesList;
+export default FilmsList;

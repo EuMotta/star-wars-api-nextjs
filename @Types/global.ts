@@ -74,6 +74,7 @@ export type Film = {
 };
 
 export type Planet = {
+  image: any;
   name: string;
   rotation_period: string;
   orbital_period: string;
@@ -90,7 +91,27 @@ export type Planet = {
   url: string;
 };
 
+export type Species = {
+  image: any;
+  name: string;
+  classification: string;
+  designation: string;
+  average_height: string;
+  skin_colors: string;
+  hair_colors: string;
+  eye_colors: string;
+  average_lifespan: string;
+  homeworld: string;
+  language: string;
+  people: string[];
+  films: string[];
+  created: string;
+  edited: string;
+  url: string;
+};
+
 export type Character = {
+  image: string;
   name: string;
   height: string;
   mass: string;

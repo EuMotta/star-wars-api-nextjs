@@ -272,3 +272,59 @@ h5 {
 .drop_shadow_white {
   filter: drop-shadow(5px 5px 4px rgba(255, 255, 255, 0.63));
 }
+
+::-webkit-scrollbar {
+  width: 0.75rem; 
+  height: 0.75rem; 
+}
+
+::-webkit-scrollbar-thumb {
+  cursor: pointer;
+  background-color: red;
+  border-radius: 4px 4px 4px 4px;
+  background-image: linear-gradient(
+      to bottom,
+      hsl(var(--blade-hue, 0) 100% var(--blade-lightness, 50%)) 20%,
+      hsl(var(--blade-hue, 0) 100% var(--blade-lightness, 50%))
+    ),
+    url('/saber.png');
+  background-size:
+    100% 80%,
+    auto 20%;
+  background-repeat: no-repeat;
+  background-position: top, bottom;
+}
+
+
+::-webkit-scrollbar-track {
+  background: #000;
+}
+
+
+::-webkit-scrollbar-thumb {
+  position: relative;
+}
+
+::-webkit-scrollbar-thumb::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: hsl(var(--blade-hue, 0) 100% var(--blade-lightness, 50%));
+  border-radius: inherit;
+  filter: blur(0.5em);
+  opacity: 1;
+  animation: pulse linear 5s infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}

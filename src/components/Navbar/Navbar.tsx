@@ -24,9 +24,7 @@ export function NavbarDemo() {
 function Navbar({ className }: { className?: string }) {
   const [active, setActive] = useState<string | null>(null);
   return (
-    <div
-      className={cn('fixed top-10 inset-x-0 max-w-2xl mx-auto z-50', className)}
-    >
+    <div className={cn('fixed mx-auto inset-x-0 max-w-2xl', className)}>
       <Menu setActive={setActive}>
         <Theme />
         <div className="flex gap-5">

@@ -48,8 +48,10 @@ export default function RootLayout({
         />
         <Providers>
           <ScrollUp />
-          <NavbarDemo />
-          <div className="mt-5">{children}</div>
+          <div className="fixed top-0  z-50">
+            <NavbarDemo />
+          </div>
+          <div>{children}</div>
         </Providers>
       </body>
     </html>
